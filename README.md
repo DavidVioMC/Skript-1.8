@@ -25,7 +25,10 @@ You can find the downloads in the [releases page](https://github.com/Matocolotoe
 ## Upgrading from an older version to this version
 If you're upgrading from Skript 2.2 or older to this plugin, you need to change things in your scripts.
 
-1. The lore separator `||` isn't available anymore, you will have to use a list of texts.
+
+
+
+**1. The lore separator `||` isn't available anymore, you will have to use a list of texts.**
 
 
 For example, `1st line||2nd line||3rd line` will have to be `"1st line", "2nd line", "3rd line"`.
@@ -39,7 +42,8 @@ This is not a complete fix, a lot warnings regarding `"and" missing` might appea
 
 
 
-2. A new aliases system is out, so you might need to change them
+
+**2. A new aliases system is out, so you might need to change them**
 
 
 The new aliases are available in the [skript-aliases](https://github.com/SkriptLang/skript-aliases) repository.
@@ -54,8 +58,9 @@ aliases:
    pvp items = any swords, bow, arrow
 ```
 
-You might also be worried regarding the loading time of your scripts. This is a known issue, especially if you are
-using items with long lores.
+
+**3. You might also be worried regarding the loading time of your scripts. This is a known issue, especially if you are
+using items with long lores.**
 
 ## Documentation
 Documentation is available [here](https://skriptlang.github.io/Skript) for the
