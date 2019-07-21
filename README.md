@@ -17,6 +17,8 @@ parts of Skript to be available, though might not be stable below 1.9.
 This fork of Skript is only available for Minecraft 1.8. Check above if you're
 looking for 1.9+ compatibility.
 
+Also, it doesn't support hooks to FAWE or WorldGuard yet.
+
 ## Download
 You can find the downloads in the [releases page](https://github.com/Matocolotoe/Skript/releases).
 
@@ -27,6 +29,13 @@ The new aliases are available in the [skript-aliases repository](https://github.
 The lore separator `||` isn't available anymore, you will have to use a list of texts.
 For example, `1st line||2nd line||3rd line` will have to be `"1st line", "2nd line", "3rd line"`.
 If you have a lot of lores to update, just use CTRL+F to replace `||` by `", "` in all the files you want.
+
+Also, backup your custom aliases and delete your `aliases-english.sk` and `aliases-german.sk`.
+To register them, you'll have to put this at the top of your script using them (example below).
+```
+aliases:
+   pvp items = any swords, bow, arrow
+```
 
 ## Documentation
 Documentation is available [here](https://skriptlang.github.io/Skript) for the
