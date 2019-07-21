@@ -60,6 +60,16 @@ aliases:
 ```
 
 
+Data values like `oak log:12` are not available anymore, a new expression as been introduced to support data values.
+
+Most blocks now have aliases like 6-faces logs, for example `oak bark`.
+
+However, if it does not have one, here is a working example : `set event-block to cauldron with data value 1`.
+
+
+
+
+
 **3. You might also be worried regarding the loading time of your scripts. This is a known issue, especially if you are
 using items with long lores.**
 
