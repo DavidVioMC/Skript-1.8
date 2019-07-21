@@ -37,8 +37,9 @@ For example, `1st line||2nd line||3rd line` will have to be `"1st line", "2nd li
 If you have a lot of lores to update, just use CTRL+F to replace `||` by `", "` in all the files you want.
 
 
-This is not a complete fix, a lot warnings regarding `"and" missing` might appear. To disable them, set the
-`disable variable missing and/or warnings` to `true` in your `config.sk` file inside the Skript folder.
+This is not a complete fix, a lot warnings regarding `"and" missing` might appear.
+
+To disable them, set the `disable variable missing and/or warnings` to `true` in your `config.sk` file.
 
 
 
@@ -50,7 +51,7 @@ The new aliases are available in the [skript-aliases](https://github.com/SkriptL
 This fork provides 1.8 aliases for splash potions (which changed in 1.9+), see the
 [skript-aliases folder](https://github.com/Matocolotoe/Skript-1.8/tree/master/skript-aliases).
 
-Also, if you had custom aliases, backup them and delete your `aliases-english.sk` and `aliases-german.sk`, they aren't used any more
+Also, if you had custom aliases, backup them and delete your `aliases-english.sk` and `aliases-german.sk`, they aren't used anymore.
 
 To register custom aliases, you'll have to put this at the top of your script using them (example below).
 ```

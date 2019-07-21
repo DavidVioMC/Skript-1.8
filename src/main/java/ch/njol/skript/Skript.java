@@ -1484,12 +1484,9 @@ public final class Skript extends JavaPlugin implements Listener {
 		SkriptUpdater updater = Skript.getInstance().getUpdater();
 		
 		// Check if server platform is supported
-		if (!isRunningMinecraft(1, 9)) {
-			logEx("You are running an outdated Minecraft version not supported by Skript.");
-			logEx("Please update to Minecraft 1.9.4 or later or fix this yourself and send us a pull request.");
-			logEx("Alternatively, use an older Skript version; do note that those are also unsupported by us.");
-			logEx("");
-			logEx("Again, we do not support Minecraft versions this old.");
+		if (isRunningMinecraft(1, 9)) {
+			logEx("You are running Minecraft 1.9+, not supported by this fork of Skript.");
+			logEx("This plugin supports Minecraft 1.8 only.");
 		} else if (!serverPlatform.supported){
 			logEx("Your server platform appears to be unsupported by Skript. It might not work reliably.");
 			logEx("You can report this at " + issuesUrl + ". However, we may be unable to fix the issue.");
@@ -1502,6 +1499,8 @@ public final class Skript extends JavaPlugin implements Listener {
 			if (pluginPackages.isEmpty()) {
 				logEx("You should report it at " + issuesUrl + ". Please copy paste this report there (or use paste service).");
 				logEx("This ensures that your issue is noticed and will be fixed as soon as possible.");
+				logEx("If you believe this is related to this fork in particular (for example if the issue didn't occur");
+				logEx("with the latest SkriptLang release), please report it here : https://github.com/Matocolotoe/Skript/issues");
 			} else {
 				logEx("It looks like you are using some plugin(s) that alter how Skript works (addons).");
 				if (stackPlugins.isEmpty()) {
