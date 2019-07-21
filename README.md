@@ -24,23 +24,38 @@ You can find the downloads in the [releases page](https://github.com/Matocolotoe
 
 ## Upgrading from an older version to this version
 If you're upgrading from Skript 2.2 or older to this plugin, you need to change things in your scripts.
-The new aliases are available in the [skript-aliases repository](https://github.com/SkriptLang/skript-aliases).
 
-The lore separator `||` isn't available anymore, you will have to use a list of texts.
+1. The lore separator `||` isn't available anymore, you will have to use a list of texts.
+
+
 For example, `1st line||2nd line||3rd line` will have to be `"1st line", "2nd line", "3rd line"`.
 
 
 If you have a lot of lores to update, just use CTRL+F to replace `||` by `", "` in all the files you want.
+
+
 This is not a complete fix, a lot warnings regarding `"and" missing` might appear. To disable them, set the
 `disable variable missing and/or warnings` to `true` in your `config.sk` file inside the Skript folder.
 
 
-Also, backup your custom aliases and delete your `aliases-english.sk` and `aliases-german.sk`.
-To register them, you'll have to put this at the top of your script using them (example below).
+
+2. A new aliases system is out, so you might need to change them
+
+
+The new aliases are available in the [skript-aliases](https://github.com/SkriptLang/skript-aliases) repository.
+This fork provides 1.8 aliases for splash potions (which changed in 1.9+), see the
+[skript-aliases folder](https://github.com/Matocolotoe/Skript-1.8/tree/master/skript-aliases).
+
+Also, if you had custom aliases, backup them and delete your `aliases-english.sk` and `aliases-german.sk`, they aren't used any more
+
+To register custom aliases, you'll have to put this at the top of your script using them (example below).
 ```
 aliases:
    pvp items = any swords, bow, arrow
 ```
+
+You might also be worried regarding the loading time of your scripts. This is a known issue, especially if you are
+using items with long lores.
 
 ## Documentation
 Documentation is available [here](https://skriptlang.github.io/Skript) for the
