@@ -28,7 +28,12 @@ The new aliases are available in the [skript-aliases repository](https://github.
 
 The lore separator `||` isn't available anymore, you will have to use a list of texts.
 For example, `1st line||2nd line||3rd line` will have to be `"1st line", "2nd line", "3rd line"`.
+
+
 If you have a lot of lores to update, just use CTRL+F to replace `||` by `", "` in all the files you want.
+This is not a complete fix, a lot warnings regarding `"and" missing` might appear. To disable them, set the
+`disable variable missing and/or warnings` to `true` in your `config.sk` file inside the Skript folder.
+
 
 Also, backup your custom aliases and delete your `aliases-english.sk` and `aliases-german.sk`.
 To register them, you'll have to put this at the top of your script using them (example below).
