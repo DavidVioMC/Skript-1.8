@@ -26,8 +26,6 @@ You can find the downloads in the [releases page](https://github.com/Matocolotoe
 If you're upgrading from Skript 2.2 or older to this plugin, you need to change things in your scripts.
 
 
-
-
 **1. The lore separator `||` isn't available anymore, you will have to use a list of texts.**
 
 
@@ -40,8 +38,6 @@ If you have a lot of lores to update, just use CTRL+F to replace `||` by `", "` 
 This is not a complete fix, a lot warnings regarding `"and" missing` might appear.
 
 To disable them, set the `disable variable missing and/or warnings` to `true` in your `config.sk` file.
-
-
 
 
 **2. A new aliases system is out, so you might need to change them**
@@ -65,9 +61,6 @@ Data values like `oak log:12` are not available anymore, a new expression as bee
 Most blocks now have aliases like 6-faces logs, for example `oak bark`.
 
 However, if it does not have one, here is a working example : `set event-block to cauldron with data value 1`.
-
-
-
 
 
 **3. You might also be worried regarding the loading time of your scripts. This is a known issue, especially if you are
