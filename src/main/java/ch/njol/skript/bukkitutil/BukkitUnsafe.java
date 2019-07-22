@@ -67,14 +67,8 @@ public class BukkitUnsafe {
 		unsafe = values;
 	}
 	
-	/**
-	 * Before 1.13, Vanilla material names were translated using
-	 * this + a lookup table.
-	 */
 	@Nullable
 	private static MethodHandle unsafeFromInternalNameMethod;
-	
-	private static final boolean newMaterials = Skript.isRunningMinecraft(1, 13);
 	
 	/**
 	 * Vanilla material names to Bukkit materials.
@@ -101,67 +95,56 @@ public class BukkitUnsafe {
 	private static Map<Integer,Material> idMappings;
 	
 	public static void initialize() {
-		if (!newMaterials) {
-			MethodHandle mh;
-			try {
-				mh = MethodHandles.lookup().findVirtual(UnsafeValues.class,
-						"getMaterialFromInternalName", MethodType.methodType(Material.class, String.class));
-			} catch (NoSuchMethodException | IllegalAccessException e) {
-				mh = null;
+		MethodHandle mh;
+		try {
+			mh = MethodHandles.lookup().findVirtual(UnsafeValues.class,
+					"getMaterialFromInternalName", MethodType.methodType(Material.class, String.class));
+		} catch (NoSuchMethodException | IllegalAccessException e) {
+			mh = null;
+		}
+		unsafeFromInternalNameMethod = mh;
+		
+		try {
+			boolean mapExists = loadMaterialMap("materials/1.8.json");
+			if (!mapExists) {
+				loadMaterialMap("materials/1.8.json"); // Actually the only json file since it's only 1.8 compatible
+				preferMaterialMap = false;
+				Skript.warning("Material mappings are not available.");
+				Skript.warning("Depending on your server software, some aliases may not work.");
 			}
-			unsafeFromInternalNameMethod = mh;
-			
-			try {
-				Version version = Skript.getMinecraftVersion();
-				boolean mapExists = loadMaterialMap("materials/" + version.getMajor() + "." +  version.getMinor() + ".json");
-				if (!mapExists) {
-					loadMaterialMap("materials/1.8.json"); // Actually the only json file since it's only 1.8 compatible
-					preferMaterialMap = false;
-					Skript.warning("Material mappings for " + version + " are not available.");
-					Skript.warning("Depending on your server software, some aliases may not work.");
-				}
-			} catch (IOException e) {
-				Skript.exception(e, "Failed to load material mappings. Aliases may not work properly.");
-			}
+		} catch (IOException e) {
+			Skript.exception(e, "Failed to load material mappings. Aliases may not work properly.");
 		}
 	}
 	
 	@Nullable
 	public static Material getMaterialFromMinecraftId(String id) {
-		if (newMaterials) {
-			// On 1.13, Vanilla and Spigot names are same
-			if (id.length() > 9)
-				return Material.matchMaterial(id.substring(10)); // Strip 'minecraft:' out
-			else // Malformed material name
-				return null;
-		} else {
-			// If we have correct material map, prefer using it
-			if (preferMaterialMap) {
-				if (id.length() > 9) {
-					assert materialMap != null;
-					return materialMap.get(id.substring(10)); // Strip 'minecraft:' out
-				}
-			}
-			
-			// Otherwise, hacks
-			Material type = null;
-			try {
-				assert unsafeFromInternalNameMethod != null;
-				type = (Material) unsafeFromInternalNameMethod.invokeExact(unsafe, id);
-			} catch (Throwable e) {
-				// Only spit out an error once unless debugging
-				if (!unsafeValuesErrored || Skript.debug()) {
-					Skript.exception(e, "UnsafeValues failed to get material from Vanilla id");
-					unsafeValuesErrored = true;
-				}
-			}
-			if (type == null || type == Material.AIR) { // If there is no item form, UnsafeValues won't work
-				// So we're going to rely on 1.12's material mappings
+		// If we have correct material map, prefer using it
+		if (preferMaterialMap) {
+			if (id.length() > 9) {
 				assert materialMap != null;
-				return materialMap.get(id);
+				return materialMap.get(id.substring(10)); // Strip 'minecraft:' out
 			}
-			return type;
 		}
+		
+		// Otherwise, hacks
+		Material type = null;
+		try {
+			assert unsafeFromInternalNameMethod != null;
+			type = (Material) unsafeFromInternalNameMethod.invokeExact(unsafe, id);
+		} catch (Throwable e) {
+			// Only spit out an error once unless debugging
+			if (!unsafeValuesErrored || Skript.debug()) {
+				Skript.exception(e, "UnsafeValues failed to get material from Vanilla id");
+				unsafeValuesErrored = true;
+			}
+		}
+		if (type == null || type == Material.AIR) { // If there is no item form, UnsafeValues won't work
+			// So we're going to rely on 1.12's material mappings
+			assert materialMap != null;
+			return materialMap.get(id);
+		}
+		return type;
 	}
 	
 	private static boolean loadMaterialMap(String name) throws IOException {
@@ -203,14 +186,8 @@ public class BukkitUnsafe {
 			
 			// Process raw mappings
 			Map<Integer, Material> parsed = new HashMap<>(rawMappings.size());
-			if (newMaterials) { // Legacy material conversion API
-				for (Map.Entry<Integer, String> entry : rawMappings.entrySet()) {
-					parsed.put(entry.getKey(), Material.matchMaterial(entry.getValue(), true));
-				}
-			} else { // Just enum API
-				for (Map.Entry<Integer, String> entry : rawMappings.entrySet()) {
-					parsed.put(entry.getKey(), Material.valueOf(entry.getValue()));
-				}
+			for (Map.Entry<Integer, String> entry : rawMappings.entrySet()) {
+				parsed.put(entry.getKey(), Material.valueOf(entry.getValue()));
 			}
 			idMappings = parsed;
 		} catch (IOException e) {

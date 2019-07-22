@@ -32,8 +32,6 @@ import ch.njol.skript.Skript;
  */
 public class MaterialRegistry {
 	
-	private static final boolean newMaterials = Skript.isRunningMinecraft(1, 13);
-	
 	/**
 	 * Loads a material registry from an array of strings. New materials will
 	 * be added and legacy names updated when possible.
@@ -51,15 +49,9 @@ public class MaterialRegistry {
 			if (name == null) {
 				continue; // This slot is intentionally empty
 			}
-			Material mat;
-			if (newMaterials) {
-				mat = Material.getMaterial(name);
-				if (mat == null) { // Try getting legacy material instead
-					mat = Material.getMaterial(name, true);
-				}
-			} else { // Pre-1.13, no getMaterial existed
+			Material mat = null;
+			if (Material.valueOf(name) != null)
 				mat = Material.valueOf(name);
-			}
 			
 			mappings.add(mat);
 			if (mat != null) {

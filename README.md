@@ -25,6 +25,18 @@ You can find the downloads in the [releases page](https://github.com/Matocolotoe
 ## Upgrading from an older version to this version
 If you're upgrading from Skript 2.2 or older to this plugin, you need to change things in your scripts.
 
+In the case of downgrading from 1.9+ (with an official release) to 1.8 (with this plugin), a big error with "END_ROD" might appear. If so, do the following :
+
+- backup your scripts, config and .csv files (e.g. download your Skript folder somewhere on your computer not to lose anything)
+
+- stop the server and delete the Skript folder
+
+- start the server and let the plugin load and create its files
+
+- stop the server and upload your scripts, config.sk and .csv files back where they were
+
+- restart the server and everything should be work
+
 
 **1. The lore separator `||` isn't available anymore, you will have to use a list of texts.**
 
