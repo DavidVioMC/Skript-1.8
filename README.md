@@ -44,8 +44,8 @@ To disable them, set the `disable variable missing and/or warnings` to `true` in
 
 
 The new aliases are available in the [skript-aliases](https://github.com/SkriptLang/skript-aliases) repository.
-This fork provides 1.8 aliases for splash potions (which changed in 1.9+), see the
-[skript-aliases folder](https://github.com/Matocolotoe/Skript-1.8/tree/master/skript-aliases).
+This fork provides 1.8 aliases for splash potions (which changed in 1.9+), see details
+[here](https://github.com/Matocolotoe/Skript-1.8/tree/master/skript-aliases/brewing.sk).
 
 Also, if you had custom aliases, backup them and delete your `aliases-english.sk` and `aliases-german.sk`, they aren't used anymore.
 
