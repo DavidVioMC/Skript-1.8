@@ -57,7 +57,8 @@ potions:
 	(potion¦s of {potion types}|{potion types} potion¦s) = minecraft:potion
 	potion¦s = minecraft:potion
 
-splash regen[eration] potion¦s = minecraft:potion {Damage:16385}
+splash potions:
+	splash regen[eration] potion¦s = minecraft:potion {Damage:16385}
 	(strong|upgraded|level 2) splash regen[eration] potion¦s = minecraft:potion {Damage:16417}
 	(extended|long) splash regen[eration] potion¦s = minecraft:potion {Damage:16449}
 	
