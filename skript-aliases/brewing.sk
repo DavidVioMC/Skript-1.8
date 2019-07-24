@@ -100,7 +100,7 @@ splash potions:
 	(extended|long) splash slow[ness] potion¦s = minecraft:potion {Damage:16458}
 	
 	splash water breathing potion¦s = minecraft:potion {Damage:16426}
-	(extended|long) splash water breathing potion¦s = minecraft:potion {Damage:16458}
+	(extended|long) splash water breathing potion¦s = minecraft:potion {Damage:16461}
 	
 	splash invisibility potion¦s = minecraft:potion {Damage:16430}
 	(extended|long) splash invisibility potion¦s = minecraft:potion {Damage:16462}
