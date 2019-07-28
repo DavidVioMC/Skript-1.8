@@ -227,10 +227,10 @@ task spigotResources(type: ProcessResources) {
 		filter ReplaceTokens, tokens: [
 			"version": version,
 			"today": "" + LocalDate.now(),
-			"release-flavor": "skriptlang-spigot", // SkriptLang build, distributed on Spigot resources
+			"release-flavor": "github-matocolotoe-1.8", // SkriptLang build, distributed on Spigot resources
 			"release-channel": channel, // Release channel, see above
 			"release-updater": "ch.njol.skript.update.GithubChecker", // Github API client
-			"release-source": "https://api.github.com/repos/SkriptLang/Skript/releases", // Github API URL
+			"release-source": "https://api.github.com/repos/Matocolotoe/Skript-1.8/releases", // Github API URL
 			"release-download": "\"http://example.com\"" // TODO insert Spigot URL
 		]
 	}
