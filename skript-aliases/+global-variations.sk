@@ -4,7 +4,6 @@
 
 # Variations which use data values for older Minecraft versions.
 data values:
-	minecraft version = 1.12.2 or older
 	# For blocks that were colored via data value in 1.12 and below
 	{colored}:
 		white = - {Damage:0}

@@ -57,7 +57,6 @@ unchanged building blocks:
 # 1.13 changed the IDs of a lot of blocks since they're no longer defined by data value.
 # This section is for blocks that had a different ID prior to 1.13.
 old blocks before flattening:
-	minecraft version = 1.12.2 or older
 	# Stones
 	[raw] granite¦s = minecraft:stone {Damage:1}
 	(smooth|polished) granite¦s = minecraft:stone {Damage:2}

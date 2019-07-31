@@ -124,5 +124,4 @@ unchanged ingredients:
 	rabbit['s] (foot|feet) = minecraft:rabbit_foot
 
 ingredients before flattening:
-	minecraft version = 1.12.2 or older
 	(glistering|gold[en]) melon[ slice]¦s = minecraft:speckled_melon

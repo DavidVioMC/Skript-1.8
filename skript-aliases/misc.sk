@@ -11,10 +11,8 @@ mining:
 	flint¦s = minecraft:flint
 
 old items:
-	minecraft version = 1.12.2 or older
 	charcoal = minecraft:coal {Damage:1}
 	sugar cane¦s = minecraft:reeds
-	clay [ball¦s] = minecraft:clay
 	nether brick item¦s = minecraft:netherbrick
 
 valuables:
@@ -35,6 +33,7 @@ random items:
 	gunpowder = minecraft:gunpowder
 	snowball¦s = minecraft:snowball[relatedEntity=snowball]
 	leather = minecraft:leather
+	clay [balls] = minecraft:clay_ball
 	[clay] brick [item]¦s = minecraft:brick
 	(piece[s] of paper|paper¦s) = minecraft:paper
 	slimeball¦s = minecraft:slime_ball
@@ -73,7 +72,6 @@ fireworks:
 		(3|three|long) = - {Fireworks:{Flight:3}}
 
 fireworks before flattening:
-	minecraft version = 1.12.2 or older
 	[(flight|duration|flight duration) {firework types} ] firework [rocket]¦s = minecraft:fireworks[relatedEntity=firework rocket]
 	firework (star|charge)¦s = minecraft:firework_charge
 
@@ -92,7 +90,6 @@ unchanged buckets:
 	any bucket = empty bucket, water bucket, lava bucket, milk
 
 old music discs:
-	minecraft version = 1.12.2 or older
 	[music] (disc|record) 11 = minecraft:record_11
 	[music] (disc|record) 13 = minecraft:record_13
 	[music] (disc|record) blocks = minecraft:record_blocks
@@ -108,7 +105,6 @@ old music discs:
 	any [music] (disc|record) = music disc 11, music disc 13, music disc blocks, music disc cat, music disc chirp, music disc far, music disc mall, music disc mellohi, music disc stal, music disc strad, music disc wait, music disc ward
 
 dyes before flattening:
-	minecraft version = 1.12.2 or older
 	(ink sac|black dye)¦s = minecraft:dye {Damage:0}
 	(rose red|red dye)¦s =  minecraft:dye {Damage:1}
 	(cactus green|green dye)¦s = minecraft:dye {Damage:2}
@@ -129,7 +125,6 @@ dyes before flattening:
 
 # These are for mobs that have existed since at least 1.8 and these IDs remained valid up through 1.12
 spawn eggs before flattening:
-	minecraft version = 1.12.2 or older
 	(bat [spawn] egg|spawn bat)¦s = minecraft:spawn_egg {Damage:65}
 	(blaze [spawn] egg|spawn blaze)¦s = minecraft:spawn_egg {Damage:61}
 	(cave spider [spawn] egg|spawn cave spider)¦s = minecraft:spawn_egg {Damage:59}

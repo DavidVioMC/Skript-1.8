@@ -17,7 +17,6 @@ unchanged decoratives:
 
 # Decoratives who used to have a different ID before the flattening.
 decoratives before flattening:
-	minecraft version = 1.12.2 or older
 	{old wood type} sapling¦s = minecraft:sapling
 	jukebox¦es = minecraft:jukebox
 
@@ -154,7 +153,6 @@ unchanged categories:
 	[any] sapling¦s = oak sapling, spruce sapling, birch sapling, jungle sapling, acacia sapling, dark oak sapling
 
 orientations before flattening:
-	minecraft version = 1.12.2 or older
 	{skull types}:
 		skeleton (skull|head)¦s = - {Damage:0}
 		wither skeleton (skull|head)¦s = - {Damage:1}
@@ -224,8 +222,6 @@ orientations before flattening:
 		black = - {Base:0}
 
 directionals before flattening:
-	minecraft version = 1.12.2 or older
-
 	# Skulls on walls and floors
 	[any] (head|skull) item¦s = minecraft:skull
 	{skull types} item¦s = minecraft:skull
@@ -233,7 +229,6 @@ directionals before flattening:
 
 # Simplified banner aliases for old Minecraft versions.
 basic banners:
-	minecraft version = 1.10.2 or older
 	wall banner¦s = minecraft:wall_banner
 	[standing] banner¦s = minecraft:standing_banner
 	[any] banner item¦s = minecraft:banner

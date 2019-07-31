@@ -21,7 +21,6 @@ minecarts:
 	any minecart¦s = minecart, minecart with chest, minecart with furnace, minecart with tnt, minecart with hopper, minecart with command block
 
 rails before flattening:
-	minecraft version = 1.12.2 or older
 	{rail straight}:
 		{default} = - {Damage:0}
 		[(flat|straight)] (north-south|south-north) = - {Damage:0}

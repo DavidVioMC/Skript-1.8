@@ -29,7 +29,6 @@ unchanged foods:
 
 # Before the flattening in 1.13, some foods used data values.
 foods before flattening:
-	minecraft version = 1.12.2 or older
 	[raw] (fish¦es|cod [fillet]¦s|fish fillet¦s) = minecraft:fish
 	[raw] salmon [fillet]¦s = minecraft:fish {Damage:1}
 	clownfish¦es = minecraft:fish {Damage:2}
@@ -66,5 +65,4 @@ common categories:
 
 # All foods before
 old food categories:
-	minecraft version = 1.12.2 or older
 	[any] food = any fish, fruit, root vegetables, stews, meats, monster meats, desserts, bread, baked potato, poisonous potato

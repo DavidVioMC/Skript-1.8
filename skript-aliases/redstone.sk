@@ -18,7 +18,6 @@ unchanged redstone:
 	tnt [block¦s] = minecraft:tnt[relatedEntity=primed tnt]
 
 redstone before flattening:
-	minecraft version = 1.12.2 or older
 	# Repeater
 	unpowered [redstone] repeater¦s = minecraft:unpowered_repeater
 	powered [redstone] repeater¦s = minecraft:powered_repeater
